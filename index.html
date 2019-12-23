@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>齐鲁工业大学研究生会</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="fx">
+    <link href="/yjsxsh/css/style.css" rel="stylesheet">
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="/Public/static/img/logo.png">
+    <script type="text/javascript" src="/yjsxsh/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/yjsxsh/js/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="/yjsxsh/js/scripts.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $("ul.tab").tabs(".banner .pan > a", {
+                effect: 'fade',
+                rotate: true,
+                tabs: "li"
+            }).slideshow({
+                next: ".arr_r",
+                prev: ".arr_l",
+                autoplay: true,
+                autopause: true,
+                interval: 3000
+            });
+        })
+    </script>
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_1256439335'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1256439335' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+	
+	
+	<!--changeimage-->
+	<script type="text/javascript">
+	window.onload = function(){
+		function $(param){
+			if(arguments[1] == true){
+				return document.querySelectorAll(param);
+			}else{
+				return document.querySelector(param);
+			}
+		}
+		var $box = $(".box");
+		var $box1 = $(".box-1 ul li",true);
+		var $box2 = $(".box-2 ul");
+		var $box3 = $(".box-3");
+		var $length = $box1.length;
+		
+		var str = "";
+		for(var i =0;i<$length;i++){
+			if(i==0){
+				str +="<li class='on'>"+(i+1)+"</li>";
+			}else{
+				str += "<li>"+(i+1)+"</li>";
+			}
+		}
+		$box2.innerHTML = str;
+		
+		var current = 0;
+		
+		var timer;
+		timer = setInterval(go,3000);
+		function go(){
+			for(var j =0;j<$length;j++){
+				$box1[j].style.display = "none";
+				$box2.children[j].className = "";
+			}
+			if($length == current){
+				current = 0;
+			}
+			$box1[current].style.display = "block";
+			$box2.children[current].className = "on";
+			current++;
+		}
+		
+		for(var k=0;k<$length;k++){
+			$box1[k].onmouseover = function(){
+				clearInterval(timer);
+			}
+			$box1[k].onmouseout = function(){
+				timer = setInterval(go,3000);
+			}
+		}
+		for(var p=0;p<$box3.children.length;p++){
+			$box3.children[p].onmouseover = function(){
+				clearInterval(timer);
+			};
+			$box3.children[p].onmouseout = function(){
+				timer = setInterval(go,3000);
+			}
+		}
+		
+		for(var u =0;u<$length;u++){
+			$box2.children[u].index  = u;
+			$box2.children[u].onmouseover = function(){
+				clearInterval(timer);
+				for(var j=0;j<$length;j++){
+					$box1[j].style.display = "none";
+					$box2.children[j].className = "";
+				}
+				this.className = "on";
+				$box1[this.index].style.display = "block";
+				current = this.index +1;
+			}
+			$box2.children[u].onmouseout = function(){
+				timer = setInterval(go,3000);
+			}
+		}
+		
+		$box3.children[0].onclick = function(){
+			back();
+		}
+		$box3.children[1].onclick = function(){
+			go();
+		}
+		function back(){
+			for(var j =0;j<$length;j++){
+				$box1[j].style.display = "none";
+				$box2.children[j].className = "";
+			}
+			if(current == 0){
+				current = $length;
+			}
+			$box1[current-1].style.display = "block";
+			$box2.children[current-1].className = "on";
+			current--;
+		}
+	}
+	</script>
+	<!--changeimage-->
+	
+	
+</head>
+<body>
+
+	<!--header begin-->
+	<div id="header">
+    <div id="slider" class="banner">
+        <div class="wrap">
+            <div class="pan">
+                <a href="" style="display:none;"><img src="img/banner.jpg" width="1000" height="200" alt="第一张Banner"></a>            </div>
+            <a class="arr_l rf png"></a>
+            <a class="arr_r rf png"></a>
+            <!--缩略图,这里取消显示，需要可以向li标签里面添加img，并且display属性改为block-->
+           	 <ul class="tab lifl">
+                <li class="current"></li>
+            </ul>
+        </div>
+    </div>
+    <!--menu 栏开始-->
+    <div id="menu_bar">
+        <ul>
+            <li>
+				<div class="dropdown">
+					<a href="index.html">
+				  <button class="dropbtn" href="index.html"> 工大研会</button></a>
+				  <div class="dropdown-content">
+					<a href="yhjs/yanhuijieshao.html">研会介绍</a>
+					<a href="#">研会风采</a>
+				  </div>
+				</div>
+            </li>
+            <li>
+                <a class="menu_content" href="/Home/category/rights/1">新闻动态</a>
+            </li>
+            <li>
+                <a class="menu_content" href="/Home/category/inform/1">研会动态</a>
+            </li>
+            <li>
+               <a class="menu_content" href="/Home/article/12778">通知公告</a>
+                <div class="down_icon"></div>
+            </li>	
+			<li>
+				<!--<a class="menu_content" href="/Home/category/inform/1">学术交流</a>-->
+				<div class="dropdown">
+				  <button class="dropbtn">学术交流</button>
+				  <div class="dropdown-content">
+				    <a href="http://sqgx.cbpt.cnki.net/WKD/WebPublication/index.aspx?mid=sqgx">学术期刊</a>
+					<a href="#">科研园地</a>
+					
+				  </div>
+				</div>
+			</li>
+			<li>
+				<a class="menu_content" href="/Home/category/inform/1">下载链接</a>
+			</li>
+            <li>
+                <form action="gztz/13776" method="POST" onsubmit="return search_check()"><div id="search_bar"><input type="text" id="search_input" name="title" placeholder="文章标题..." /><input type="submit" id="search_btn" value=""/></div>
+				</form>
+            </li>
+        </ul>
+    </div>
+    <!--menu 栏结束-->
+</div>
+	<!--header end-->
+	<div id="content">
+        <!-- 第一行 -->
+		<div class="content_row index">
+            <!--活动预告板块开始-->
+			<!--changeimage-->
+			<div class="block1">
+				<div class="box">
+					<div class="box-1">
+						<ul>
+							<li>
+								<img src="images/9.png" alt="王英龙以普通党员身份参加所在党支部“不忘初心、牢记使命”专题组织生活会"></img>
+								<h2>王英龙以普通党员身份参加所在党支部“不忘初心、牢记使命”专题组织生活会</h2>
+							</li>
+							<li>
+								<img src="images/8.jpg" alt="学校（科学院）党委理论学习中心组（扩大）专题学习区块链技术及应用"></img>
+								<h2>学校（科学院）党委理论学习中心组（扩大）专题学习区块链技术及应用</h2>
+							</li>
+							<li>
+								<img src="images/7.png" alt="陈嘉川参加并指导轻工学院党委 “不忘初心、牢记使命” 主题教育专题民主生活会"></img>
+								<h2>陈嘉川参加并指导轻工学院党委 “不忘初心、牢记使命” 主题教育专题民主生活会</h2>
+							</li>
+							<li>
+								<img src="images/10.png" alt="济南市委书记王忠林莅临国家超算济南中心考察项目建设情况"></img>
+								<h2>济南市委书记王忠林莅临国家超算济南中心考察项目建设情况</h2>
+							</li>
+							<li>
+								<img src="images/11.png" alt="学校（科学院）举行2019年“校园十佳、百优学生”评选活动"></img>
+								<h2>学校（科学院）举行2019年“校园十佳、百优学生”评选活动</h2>
+							</li>
+						</ul>
+					</div>
+					<div class="box-2">
+						<ul>	
+						</ul>
+					</div>
+					<div class="box-3">
+						<span class="prev"> < </span>
+						<span class="next"> > </span>
+					</div>
+				</div>
+			</div>
+			
+            <div class="block1">
+                <div class="block_menu">
+                    <div class="block_menu_content">
+                        <img src="img/fengche.png" height="48" width="48" class="menu_icon">
+                        <div class="menu_name">新闻动态</div>
+                        <a class="menu_more" href="/Home/category/activity/1">更多</a>
+                    </div>
+                </div>
+                <!--文章列表 begin-->
+                <div class="block_content">
+                    <ul>
+                        <li>
+                                <a href="xwdt/12777.html" title="王英龙以普通党员身份参加所在党支部“不忘初心、牢记使命”专题组织生活会">
+                                    <div class="list_text">王英龙以普通党员身份参加所在党支部“不忘初心、牢记使命”专题组织生活会 </div>
+                                    <div class="list_date">2019-12-06</div>
+                                </a>
+                            </li><li>
+                                <a href="xwdt/12778.html" title="学校（科学院）党委理论学习中心组（扩大）专题学习区块链技术及应用">
+                                    <div class="list_text">学校（科学院）党委理论学习中心组（扩大）专题学习区块链技术及应用</div>
+                                    <div class="list_date">2019-11-11</div>
+                                </a>
+                            </li><li>
+                                <a href="xwdt/12779.html" title="陈嘉川参加并指导轻工学院党委 “不忘初心、牢记使命” 主题教育专题民主生活会">
+                                    <div class="list_text">陈嘉川参加并指导轻工学院党委 “不忘初心、牢记使命” 主题教育专题民主生活会</div>
+                                    <div class="list_date">2019-12-07</div>
+                                </a>
+                            </li><li>
+                                <a href="xwdt/12781.html" title="济南市委书记王忠林莅临国家超算济南中心考察项目建设情况">
+                                    <div class="list_text">济南市委书记王忠林莅临国家超算济南中心考察项目建设情况</div>
+                                    <div class="list_date">2019-09-24</div>
+                                </a>
+                            </li><li>
+                                <a href="xwdt/12780.html" title="学校（科学院）举行2019年“校园十佳、百优学生”评选活动">
+                                    <div class="list_text">学校（科学院）举行2019年“校园十佳、百优学生”评选活动</div>
+                                    <div class="list_date">2019-12-06</div>
+                                </a>
+                            </li><li>
+                                <a href="xwdt/12782.html" title="学校（科学院）在第六届山东省大学生科技创新大赛中取得佳绩">
+                                    <div class="list_text">学校（科学院）在第六届山东省大学生科技创新大赛中取得佳绩</div>
+                                    <div class="list_date">2019-12-10</div>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+                <!--文章列表 end-->
+            </div>
+			
+            <!--活动预告板块开始-->
+            <!--研会动态板块开始-->
+            <div class="block2">
+                <div class="block_menu">
+                    <div class="block_menu_content">
+                        <img src="img/fengche.png" height="48" width="48" class="menu_icon">
+                        <div class="menu_name">研会动态</div>
+                        <a class="menu_more" href="/Home/category/dongtai/1">更多</a>
+                    </div>
+                </div>
+                <!--文章列表 begin-->
+                <div class="block_content">
+                    <ul>
+                        <li>
+                                   <a href="gztz/13776" title="2019年研究生教育质量提升计划和研究生教育创新计划项目评审校级及推荐省级结果公示 ">
+                                       <div class="list_text">2019年研究生教育质量提升计划和研究生教育创新计划项目评审校级及推荐省级结果公示 </div>
+                                       <div class="list_date">2019-11-11</div>
+                                   </a>
+                               </li><li>
+                                   <a href="/Home/article/13459" title="关于公布2019年下半年学位论文重复率检测结果的通知">
+                                       <div class="list_text">关于公布2019年下半年学位论文重复率检测结果的通知</div>
+                                       <div class="list_date">2019-11-11</div>
+                                   </a>
+                               </li><li>
+                                   <a href="/Home/article/13408" title="关于公布2019年下半年硕士学位论文“双盲”评审名单的通知">
+                                       <div class="list_text">关于公布2019年下半年硕士学位论文“双盲”评审名单的通知</div>
+                                       <div class="list_date">2019-10-21</div>
+                                   </a>
+                               </li><li>
+                                   <a href="/Home/article/13399" title="关于做好2019年秋季在职工程硕士申请答辩前各培养环节审核工作的通知">
+                                       <div class="list_text">关于做好2019年秋季在职工程硕士申请答辩前各培养环节审核工作的通知</div>
+                                       <div class="list_date">2019-09-24</div>
+                                   </a>
+                               </li><li>
+                                   <a href="/Home/article/13398" title="齐鲁工业大学2020年非全日制硕士研究生招生专业目录">
+                                       <div class="list_text">齐鲁工业大学2020年非全日制硕士研究生招生专业目录</div>
+                                       <div class="list_date">2019-09-20</div>
+                                   </a>
+                               </li><li>
+                                   <a href="/Home/article/13254" title="齐鲁工业大学2020年全日制硕士研究生招生专业目录">
+                                       <div class="list_text">齐鲁工业大学2020年全日制硕士研究生招生专业目录</div>
+                                       <div class="list_date">2019-09-20</div>
+                                   </a>
+                               </li>
+					</ul>
+                </div>
+                <!--文章列表 end-->
+            </div>
+            <!--研会动态板块结束-->
+            <!--通知公告板块开始-->
+            <div class="block1">
+                <div class="block_menu">
+                    <div class="block_menu_content">
+                        <div class="menu_icon"><img src="img/fengche.png" height="48" width="48"></div>
+                        <div class="menu_name">通知公告</div>
+                        <a class="menu_more" href="tztg/tztg_gengduo_1.html">更多</a>
+                    </div>
+                </div>
+                <!--文章列表 begin-->
+                <div class="block_content">
+                    <ul>
+                        <li>
+                                <a href="tztg/13776.html" title="2019年研究生教育质量提升计划和研究生教育创新计划项目评审校级及推荐省级结果公示 ">
+                                    <div class="list_text">2019年研究生教育质量提升计划和研究生教育创新计划项目评审校级及推荐省级结果公示 </div>
+                                    <div class="list_date">2019-11-11</div>
+                                </a>
+                            </li><li>
+                                <a href="tztg/13777.html" title="关于公布2019年下半年学位论文重复率检测结果的通知">
+                                    <div class="list_text">关于公布2019年下半年学位论文重复率检测结果的通知</div>
+                                    <div class="list_date">2019-11-11</div>
+                                </a>
+                            </li><li>
+                                <a href="tztg/13778.html" title="关于公布2019年下半年硕士学位论文“双盲”评审名单的通知">
+                                    <div class="list_text">关于公布2019年下半年硕士学位论文“双盲”评审名单的通知</div>
+                                    <div class="list_date">2019-10-21</div>
+                                </a>
+                            </li><li>
+                                <a href="tztg/13779.html" title="关于做好2019年秋季在职工程硕士申请答辩前各培养环节审核工作的通知">
+                                    <div class="list_text">关于做好2019年秋季在职工程硕士申请答辩前各培养环节审核工作的通知</div>
+                                    <div class="list_date">2019-09-24</div>
+                                </a>
+                            </li><li>
+                                <a href="tztg/13780.html" title="齐鲁工业大学2020年非全日制硕士研究生招生专业目录">
+                                    <div class="list_text">齐鲁工业大学2020年非全日制硕士研究生招生专业目录</div>
+                                    <div class="list_date">2019-09-20</div>
+                                </a>
+                            </li><li>
+                                <a href="tztg/13781.html" title="齐鲁工业大学2020年全日制硕士研究生招生专业目录">
+                                    <div class="list_text">齐鲁工业大学2020年全日制硕士研究生招生专业目录</div>
+                                    <div class="list_date">2019-09-20</div>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+                <!--文章列表 end-->
+            </div>
+            <!--通知公告板块结束-->
+		</div>
+
+        <!-- 第二行 -->
+        <div class="content_row index">
+            <!--生活权益板块开始-->
+            <div class="block1">
+                <div class="block_menu">
+                    <div class="block_menu_content">
+                        <img src="img/fengche.png" height="48" width="48" class="menu_icon">
+                        <div class="menu_name">学术交流</div>
+                        <a class="menu_more" href="xueshujiaoliu/xueshubu_gengduo_1.html">更多</a>
+                    </div>
+                </div>
+                <!--文章列表 begin-->
+                <div class="block_content">
+                    <ul>
+                       <li>
+                               <a href="xueshubu/c.pdf" title="《c语言程序设计》.pdf">
+                                   <div class="list_text">《c语言程序设计》.pdf</div>
+                                   <div class="list_date">2019-12-02</div>
+                               </a>
+                           </li><li>
+                               <a href="xueshubu/java" title="《JAVA程序设计语言》.pdf">
+                                   <div class="list_text">《JAVA程序设计语言》.pdf</div>
+                                   <div class="list_date">2019-12-02</div>
+                               </a>
+                           </li><li>
+                               <a href="xueshubu/cailiaokexuejichu.pdf" title="《材料科学基础》.pdf">
+                                   <div class="list_text">《材料科学基础》.pdf</div>
+                                   <div class="list_date">2019-12-02</div>
+                               </a>
+                           </li><li>
+                               <a href="xueshubu/chuangyisheji.pdf" title="《创意设计》考试大纲.pdf">
+                                   <div class="list_text">《创意设计》考试大纲.pdf</div>
+                                   <div class="list_date">2019-12-02</div>
+                               </a>
+                           </li><li>
+                               <a href="xueshubu/daxuewuli.pdf" title="《大学物理》.pdf">
+                                   <div class="list_text">《大学物理》.pdf</div>
+                                   <div class="list_date">2019-12-02</div>
+                               </a>
+                           </li><li>
+                               <a href="xueshubu/danpianjiyuanlijiyingyong.pdf" title="《单片机原理及应用》.pdf">
+                                   <div class="list_text">《单片机原理及应用》.pdf</div>
+                                   <div class="list_date">2019-12-02</div>
+                               </a>
+                           </li></ul>
+                </div>
+                <!--文章列表 end-->
+            </div>
+            <!--生活权益板块开始-->
+            <!--院系风采板块开始-->
+            <div class="block2">
+                <div class="block_menu">
+                    <div class="block_menu_content">
+                        <img src="img/fengche.png" height="48" width="48" class="menu_icon">
+                        <div class="menu_name">下载链接</div>
+                        <a class="menu_more" href="/Home/category/college/1">更多</a>
+                    </div>
+                </div>
+                <!--文章列表 begin-->
+                <div class="block_content">
+                   <ul>
+                      <li>
+						<a href="gztz/lib/齐鲁工业大学研究生教育优质课程评审结果公示.pdf" title="齐鲁工业大学研究生教育优质课程评审结果公示.pdf" >
+							<div class="list_text"> 齐鲁工业大学研究生教育优质课程评审结果公示</div>
+							<div class="list_date">2019-11-11</div>
+							</a> 
+                        </li><li>
+						<a href="gztz/lib/齐鲁工业大学研究生教育优质课程评审结果公示.pdf" title="齐鲁工业大学研究生教育优质课程评审结果公示.pdf" >
+							<div class="list_text"> 齐鲁工业大学研究生教育优质课程评审结果公示</div>
+							<div class="list_date">2019-11-11</div>
+							</a> 
+                          </li><li>
+						<a href="gztz/lib/齐鲁工业大学研究生教育优质课程评审结果公示.pdf" title="齐鲁工业大学研究生教育优质课程评审结果公示.pdf" >
+							<div class="list_text"> 齐鲁工业大学研究生教育优质课程评审结果公示</div>
+							<div class="list_date">2019-11-11</div>
+							</a> 
+                          </li><li>
+						<a href="gztz/lib/齐鲁工业大学研究生教育优质课程评审结果公示.pdf" title="齐鲁工业大学研究生教育优质课程评审结果公示.pdf" >
+							<div class="list_text"> 齐鲁工业大学研究生教育优质课程评审结果公示</div>
+							<div class="list_date">2019-11-11</div>
+							</a> 
+                          </li><li>
+						<a href="gztz/lib/齐鲁工业大学研究生教育优质课程评审结果公示.pdf" title="齐鲁工业大学研究生教育优质课程评审结果公示.pdf" >
+							<div class="list_text"> 齐鲁工业大学研究生教育优质课程评审结果公示</div>
+							<div class="list_date">2019-11-11</div>
+							</a> 
+                          </li><li>
+						<a href="gztz/lib/齐鲁工业大学研究生教育优质课程评审结果公示.pdf" title="齐鲁工业大学研究生教育优质课程评审结果公示.pdf" >
+							<div class="list_text"> 齐鲁工业大学研究生教育优质课程评审结果公示</div>
+							<div class="list_date">2019-11-11</div>
+							</a> 
+                          </li></ul>
+                </div>
+                <!--文章列表 end-->
+            </div>
+            <!--院系风采板块结束-->
+            <!--常用下载板块开始
+            <div class="block2">
+                <div class="block_menu">
+                    <div class="block_menu_content">
+                        <div class="menu_icon"><img src="/Public/static/img/category/download.png" height="auto" width="48" /></div>
+                        <div class="menu_name">常用下载</div>
+                        <a class="menu_more" href="/Home/category/download/1">更多</a>
+                    </div>
+                </div>-->
+                <!--文章列表 begin
+                <div class="block_content">
+                    <ul>
+                        暂时没有数据                    </ul>
+                </div>-->
+                <!--文章列表 end
+            </div>-->
+            <!--常用下载板块结束-->
+        </div>
+        <!-- 第三行 -->
+        <div class="content_row index">
+            <!--相关链接板块开始-->
+            <div class="block3">
+                <div class="related_link">
+                    <div class="related_link_title">相关链接</div>
+                    <div class="related_link_content">
+                        <a href="http://www.ccyl.org.cn/" target="_blank">中国共青团</a>
+                        <a href="http://www.sdyl.gov.cn/" target="_blank">山东共青团</a>
+                        <a href="http://www.qlu.edu.cn/" target="_blank">齐鲁工业大学官网</a>
+						<a href="http://zsb.qlu.edu.cn/" target="_blank">齐鲁工业大学招生处</a>
+						<a href="https://yz.chsi.com.cn/" target="_blank">中国研究生招生信息网</a>
+                        <a href="http://yjsc.spu.edu.cn/" target="_blank">齐鲁工业大学研究生处</a>
+						
+                    </div>
+                </div>
+                <div id="division1"></div>
+                <div class="related_link">
+                    <div class="related_link_title">信息服务</div>
+                    <div class="related_link_content">
+                        <a href="http://jwc.spu.edu.cn/" target="_blank">教务处</a>
+						<a href="http://lib.qlu.edu.cn/" target="_blank">图书馆</a>
+                        <a href="http://jpkc.qlu.edu.cn/meol/homepage/common/" target="_blank">网络教育平台</a>
+                        <a href="http://210.44.144.42/login.html" target="_blank">研究生管理系统</a>
+					</div>
+                </div>
+            </div>
+            <!--相关链接板块开始-->
+            <!--部门链接板块开始-->
+            <div class="block4">
+                <div class="block_menu">
+                    <div class="block_menu_content">
+                        <img src="img/fengche.png" height="48" width="48" class="menu_icon">
+                        <div class="menu_name">部门链接</div>
+                        <a class="menu_more" href="/Home/category/department/1">更多</a>
+                    </div>
+                </div>
+                <!--图标列表 begin-->
+                <div class="block_content">
+                    <ul>
+                       <!-- <li>
+                                <a href="/Home/article/12757" target="_blank">
+                                    <img src="/Public/static/img/department_link/1.png" height="75" width="75" />
+                                    <div class="department_link_item_info">研会办公室</div>
+                                </a>
+                            </li><li>
+                                <a href="/Home/article/12758" target="_blank">
+                                    <img src="/Public/static/img/department_link/2.png" height="75" width="75" />
+                                    <div class="department_link_item_info">常代会办公室</div>
+                                </a>
+                            </li><li>
+                                <a href="/Home/article/12759" target="_blank">
+                                    <img src="/Public/static/img/department_link/3.png" height="75" width="75" />
+                                    <div class="department_link_item_info">创意设计中心</div>
+                                </a>
+                            </li>--><li>
+                                <a href="bumen/mishu.html" target="_blank">
+                                    <img src="img/mi.png" height="70" width="70" />
+                                    <div class="department_link_item_info">秘书部</div>
+                                </a>
+                            </li><li>
+                                <a href="bumen/wenti.html" target="_blank">
+                                    <img src="img/wen.png" height="70" width="70" />
+                                    <div class="department_link_item_info">文体部</div>
+                                </a>
+                            </li><li>
+                                <a href="bumen/xueshu.html" target="_blank">
+                                    <img src="img/xue.png" height="70" width="70" />
+                                    <div class="department_link_item_info">学术部</div>
+                                </a>
+                            </li><li>
+                                <a href="bumen/wailian.html" target="_blank">
+                                    <img src="img/wai.png" height="70" width="70" />
+                                    <div class="department_link_item_info">外联部</div>
+                                </a>
+                            </li><li>
+                                <a href="bumen/xuanchuan.html" target="_blank">
+                                    <img src="img/xuan.png" height="70" width="70" />
+                                    <div class="department_link_item_info">宣传部</div>
+                                </a>
+                            </li><li>
+                                <a href="bumen/bianji.html" target="_blank">
+                                    <img src="img/bian.png" height="70" width="70" />
+                                    <div class="department_link_item_info">编辑部</div>
+                                </a>
+                            </li>         
+							</ul>
+                </div>
+                <!--图标列表 end-->
+            </div>
+            <!--部门链接板块结束-->
+        </div>
+	</div>
+	<div id="footer">
+    <div id="footer_content">
+        <div id="footer_item">
+            <!--copyright info -->
+            <div id="footer_item_copyright">
+                <p>地址：山东省济南市长清区大学路3501号&nbsp;&nbsp;邮编：250353</p>
+                <p>联系电话：19819740162 &nbsp;&nbsp;电子邮箱1033420497@qq.com</p>
+                <p>Copyright&copy;2019 All Right Reserved 齐鲁工业大学研究生会 版权所有</p>
+            </div>
+
+            <!--微平台 info-->
+            <div id="footer_item_microPlatform">
+                <div id="footer_item_microPlatform_content">
+                    <div class="footer_item_microPlatform_item">
+                        <div class="footer_item_microPlatform_item_img">
+                            <img src="img/qlgydx.jpg" />
+                        </div>
+                        <div class="footer_item_microPlatform_item_text">齐鲁工业大学</div>
+                    </div>
+                    <div class="footer_item_microPlatform_item">
+                        <div class="footer_item_microPlatform_item_img">
+                            <img src="img/qlgydxtw.jpg" />
+                        </div>
+                        <div class="footer_item_microPlatform_item_text">齐鲁工业大学团委</div>
+                    </div>
+                    <div class="footer_item_microPlatform_item">
+                        <div class="footer_item_microPlatform_item_img">
+                            <img src="img/qlgydxtw.jpg" />
+                        </div>
+                        <div class="footer_item_microPlatform_item_text">齐鲁工业大学</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
