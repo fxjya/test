@@ -5,6 +5,6 @@ void printOwing(double amount) {
 }
 //print details
 void printDetials(double amount) {
-	System.out.println("name:"+_name);
-	System.out.println("amout:"+_amount);
+System.out.println("name:"+_name);
+System.out.println("amout:"+_amount);
 }
