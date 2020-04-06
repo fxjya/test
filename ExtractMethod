@@ -1,10 +1,7 @@
-//重构后
+//重构前
 void printOwing(double amount) {
-printBanner();
-printDetials(amount);
+	printBanner();
 }
 //print details
-void printDetials(double amount) {
 System.out.println("name:"+_name);
 System.out.println("amout:"+_amount);
-}
