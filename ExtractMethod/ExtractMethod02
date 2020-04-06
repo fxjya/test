@@ -1,11 +1,9 @@
-//重构前  无局部变量
+// 重构后 无局部变量 
 void printOwing() {
 	Enumeration e=_orders.elements();
 	double outstanding =0.0;
 	//print banner
-	System.out.println("********************");
-	System.out.println("****Customer Owes***");
-	System.out.println("********************");
+	printBanner();
 	//calculate outstanding
 	while(e.hasMoreElements()) {
 		Order each =(Order)e.nextElement();
@@ -14,4 +12,10 @@ void printOwing() {
 	//print details
 	System.out.println("name:"+_name);
 	System.out.println("amout:"+outstanding);		
+}
+void printBanner() {
+	//print banner
+	System.out.println("********************");
+	System.out.println("****Customer Owes***");
+	System.out.println("********************");
 }
