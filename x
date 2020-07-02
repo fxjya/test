@@ -29,7 +29,7 @@ func (pow *ProofOfWork) prepareData(nonce int) []byte {
 			IntToHex(pow.Block.Timestamp),
 			IntToHex(int64(targetBit)),
 			IntToHex(int64(nonce)),
-			IntToHex(int64(pow.Block.Hight)),
+			IntToHex(int64(pow.Block.Height)),
 		},
 		[]byte{},
 	)
@@ -68,7 +68,7 @@ func (proofOfWork *ProofOfWork) Run() ([]byte,int64) {
 	//1. 将Block的属性拼接成字节数组
 
 	//2. 生成hash
-
+	
 	//3. 判断hash有效性，如果满足条件，跳出循环
 
 	nonce := 0
